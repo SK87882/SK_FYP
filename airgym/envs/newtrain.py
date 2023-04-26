@@ -89,7 +89,7 @@ class AirSimEnv(gym.Env):
         if current_distance > 25:
             reward = -15
         else:
-            reward = 1.0 + np.tanh(-distance_difference / 10.0)
+            reward = np.tanh(-distance_difference / 10.0)
 
         return float(reward)
 
