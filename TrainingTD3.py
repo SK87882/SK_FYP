@@ -38,13 +38,8 @@ log_dir = "./tb_logs/TD3"
 os.makedirs(log_dir, exist_ok=True)
 
 # Create a list of target positions
-targ_list = np.array([[-246.243958, 40.000061, 517.317322], [-286.2645746, 40.000061, 517.317322 ], [-286.2645746, 120.000061, 517.317322 ], [-246.243958, 40.000061, 517.317322]])
+target_pos = airsim.Vector3r(5.5,0,-3)
 
-#choosing a position from the array
-choose_pos = random.choice(targ_list)
-
-#Converting to airsim vector
-target_pos = airsim.Vector3r(choose_pos)
 
 #Create an instance of custom Airsim Environment
 env = AirSimEnv(target_pos)
